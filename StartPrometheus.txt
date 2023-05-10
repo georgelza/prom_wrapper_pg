@@ -10,3 +10,10 @@ docker run -p 9091:9091 prom/pushgateway
 
 - Start Grafana
 docker run -p 3000:3000 grafana/grafana-enterprise
+
+Add a hostname/alias to local machine pointing to machine IP.
+
+Now go into Grafana (default username/password is admin/admin)
+Configure a prometheus data source, that uses the above configured hostname,
+Do not use 127.0.0.1 as the Grafana container will think of that in a local 
+sense and look for the prometheus datastore locally.
